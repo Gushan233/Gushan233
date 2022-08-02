@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gushan233.xyz","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="孤山的javafx教程——javafx简单入门java fx是什么是java实现图形界面的一种方式，其他还有java的awt、swing，但是逐渐被淘汰。 javafx可以实现逻辑和样式的分离，可以使用xml和css来编写样式。 在学习之前请确保你已经熟练掌握面向对象、包装类、枚举、注解、匿名对象等内容的概念和使用。 java 11及以后使用javafx的方法jdk 11+的使用自从java11以">
+<meta property="og:type" content="article">
+<meta property="og:title" content="孤山的博客">
+<meta property="og:url" content="https://gushan233.xyz/javafx%E6%95%99%E7%A8%8B/index.html">
+<meta property="og:site_name" content="孤山的博客">
+<meta property="og:description" content="孤山的javafx教程——javafx简单入门java fx是什么是java实现图形界面的一种方式，其他还有java的awt、swing，但是逐渐被淘汰。 javafx可以实现逻辑和样式的分离，可以使用xml和css来编写样式。 在学习之前请确保你已经熟练掌握面向对象、包装类、枚举、注解、匿名对象等内容的概念和使用。 java 11及以后使用javafx的方法jdk 11+的使用自从java11以">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-02T10:06:41.278Z">
+<meta property="article:modified_time" content="2022-07-06T13:16:09.253Z">
+<meta property="article:author" content="Gushan">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://gushan233.xyz/javafx%E6%95%99%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://gushan233.xyz/javafx%E6%95%99%E7%A8%8B/","path":"javafx教程/","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 孤山的博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">孤山的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A4%E5%B1%B1%E7%9A%84javafx%E6%95%99%E7%A8%8B%E2%80%94%E2%80%94javafx%E7%AE%80%E5%8D%95%E5%85%A5%E9%97%A8"><span class="nav-number">1.</span> <span class="nav-text">孤山的javafx教程——javafx简单入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#java-fx%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.1.</span> <span class="nav-text">java fx是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-11%E5%8F%8A%E4%BB%A5%E5%90%8E%E4%BD%BF%E7%94%A8javafx%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text">java 11及以后使用javafx的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk-11-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.1.</span> <span class="nav-text">jdk 11+的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3"><span class="nav-number">1.2.2.</span> <span class="nav-text">开发文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fx%E5%9F%BA%E6%9C%AC"><span class="nav-number">1.3.</span> <span class="nav-text">fx基本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-fx%E7%9A%84%E4%B8%A4%E7%A7%8D%E5%86%99%E6%B3%95%E5%92%8Chelloworld"><span class="nav-number">1.3.1.</span> <span class="nav-text">java fx的两种写法和helloworld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javafx%E7%9A%84%E5%88%86%E5%B1%82"><span class="nav-number">1.3.2.</span> <span class="nav-text">javafx的分层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javafx%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.3.3.</span> <span class="nav-text">javafx的生命周期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fx%E7%AA%97%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">fx窗口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Stage%E7%B1%BB"><span class="nav-number">1.4.1.</span> <span class="nav-text">Stage类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Srage%E5%AE%BD%E5%BA%A6%E9%AB%98%E5%BA%A6%E7%9B%91%E5%90%AC%E5%92%8C%E4%BD%8D%E7%BD%AE%E7%9B%91%E5%90%AC"><span class="nav-number">1.4.2.</span> <span class="nav-text">Srage宽度高度监听和位置监听</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%A4%A7%E5%B0%8F%E7%9B%91%E5%90%AC"><span class="nav-number">1.4.2.1.</span> <span class="nav-text">窗口大小监听</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E4%BD%8D%E7%BD%AE%E7%9B%91%E5%90%AC"><span class="nav-number">1.4.2.2.</span> <span class="nav-text">窗口位置监听</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AA%97%E5%8F%A3%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.4.3.</span> <span class="nav-text">窗口图标设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%90%E7%AA%97%E5%8F%A3"><span class="nav-number">1.4.4.</span> <span class="nav-text">子窗口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scene%E7%B1%BB"><span class="nav-number">1.5.</span> <span class="nav-text">Scene类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6"><span class="nav-number">1.6.</span> <span class="nav-text">常用组件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E7%BB%84%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.1.</span> <span class="nav-text">添加组件的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%84%E4%BB%B6%E6%B7%BB%E5%8A%A0"><span class="nav-number">1.6.2.</span> <span class="nav-text">常用组件添加</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%83%E5%B1%80"><span class="nav-number">1.7.</span> <span class="nav-text">布局</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%91%E5%90%AC"><span class="nav-number">1.8.</span> <span class="nav-text">监听</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E5%87%BB"><span class="nav-number">1.8.1.</span> <span class="nav-text">单击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E5%87%BB"><span class="nav-number">1.8.2.</span> <span class="nav-text">双击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%94%AE%E7%9B%98"><span class="nav-number">1.8.3.</span> <span class="nav-text">键盘</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gushan</p>
+  <div class="site-description" itemprop="description">孤山的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://gushan233.xyz/javafx%E6%95%99%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gushan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤山的博客">
+      <meta itemprop="description" content="孤山的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 孤山的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-02 18:06:41" itemprop="dateCreated datePublished" datetime="2022-08-02T18:06:41+08:00">2022-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-07-06 21:16:09" itemprop="dateModified" datetime="2022-07-06T21:16:09+08:00">2022-07-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="孤山的javafx教程——javafx简单入门"><a href="#孤山的javafx教程——javafx简单入门" class="headerlink" title="孤山的javafx教程——javafx简单入门"></a>孤山的javafx教程——javafx简单入门</h1><h2 id="java-fx是什么"><a href="#java-fx是什么" class="headerlink" title="java fx是什么"></a>java fx是什么</h2><p>是java实现图形界面的一种方式，其他还有java的awt、swing，但是逐渐被淘汰。</p>
+<p>javafx可以实现逻辑和样式的分离，可以使用xml和css来编写样式。</p>
+<p>在学习之前请确保你已经熟练掌握面向对象、包装类、枚举、注解、匿名对象等内容的概念和使用。</p>
+<h2 id="java-11及以后使用javafx的方法"><a href="#java-11及以后使用javafx的方法" class="headerlink" title="java 11及以后使用javafx的方法"></a>java 11及以后使用javafx的方法</h2><h3 id="jdk-11-的使用"><a href="#jdk-11-的使用" class="headerlink" title="jdk 11+的使用"></a>jdk 11+的使用</h3><p>自从java11以后，jdk已经不内置javafx库，已交给开源社区管理，所以我们需要自己导入。</p>
+<p>可以到这个网址去下载 jar 包。注意下载的类型是sdk。</p>
+<p><a target="_blank" rel="noopener" href="https://gluonhq.com/products/javafx/">gluonhq.com</a></p>
+<p>使用maven的同学可以使用以下语句导入</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.openjfx<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javafx-controls<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">version</span>&gt;</span>19-ea+8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>本教程使用的java版本是18，因此可能与java8的写法有所出入。</p>
+<h3 id="开发文档"><a href="#开发文档" class="headerlink" title="开发文档"></a>开发文档</h3><p><a target="_blank" rel="noopener" href="https://docs.oracle.com/javafx/2/api/index.html">老版本的fx文档</a></p>
+<p><a target="_blank" rel="noopener" href="https://openjfx.io/javadoc/18/">新版本的fx文档</a></p>
+<h2 id="fx基本"><a href="#fx基本" class="headerlink" title="fx基本"></a>fx基本</h2><h3 id="java-fx的两种写法和helloworld"><a href="#java-fx的两种写法和helloworld" class="headerlink" title="java fx的两种写法和helloworld"></a>java fx的两种写法和helloworld</h3><p>第一种写法把fx app实现方法和main方法写在一个类里面，在java 11之后这个方式就失效了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">_1helloJfx</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        launch(args);  <span class="comment">//调用start</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        primaryStage.setTitle(<span class="string">&quot;javafx&quot;</span>); <span class="comment">//设置标题</span></span><br><span class="line">        primaryStage.show(); <span class="comment">//展示窗口</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>第二种方法把两个方法分开放置，在launch里面传入有start方法类的反射。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">App</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        Application.launch(Window.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Window</span> <span class="keyword">extends</span> <span class="title class_">Application</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage arg0)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        arg0.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="javafx的分层"><a href="#javafx的分层" class="headerlink" title="javafx的分层"></a>javafx的分层</h3><p>一个javafx程序有三层，最外面的是Stage层，一个Stage就是一个独立的窗口。</p>
+<p>在往里是Scene层，一个Scene就是一个窗口内部的一个状态。</p>
+<p>在往里就是一个一个的node节点，节点可以是按钮、标签、文本等组件、</p>
+<h3 id="javafx的生命周期"><a href="#javafx的生命周期" class="headerlink" title="javafx的生命周期"></a>javafx的生命周期</h3><p>任何一个事物都有产生、发展、消亡的过程，人是这样，程序也不例外。</p>
+<p>javafx的生命周期分为init、start和stop，分别是初始化，正在运行和结束。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;开始&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;init()：&quot;</span> + Thread.currentThread().getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;运行&quot;</span>);</span><br><span class="line">    primaryStage.show();</span><br><span class="line">    System.out.println(<span class="string">&quot;start()：&quot;</span> + Thread.currentThread().getName());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">stop</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;结束&quot;</span>);</span><br><span class="line">    System.out.println(<span class="string">&quot;stop()：&quot;</span> + Thread.currentThread().getName());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行后发现init是一个独立的线程，start和stop同属一个JavaFX Application Thread线程，关闭窗口后就会进入stop，我们可以在这个方法里放一些停止连接之类的函数。</p>
+<h2 id="fx窗口"><a href="#fx窗口" class="headerlink" title="fx窗口"></a>fx窗口</h2><h3 id="Stage类"><a href="#Stage类" class="headerlink" title="Stage类"></a>Stage类</h3><p>一个Stage类代表一个窗口，我们可以不使用方法提供的Stage，再写一个.</p>
+<p>另外，Stage的setHeight()和setWidth()方法用来设置窗口的宽高。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">       <span class="type">Stage</span> <span class="variable">stage</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Stage</span>();</span><br><span class="line"></span><br><span class="line">       stage.setHeight(<span class="number">500</span>);</span><br><span class="line">       stage.setWidth(<span class="number">500</span>);</span><br><span class="line">       </span><br><span class="line">       stage.show();</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>Stage类的其他方法如下表所示</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>setMaxHeight(int);</td>
+<td>窗口最大高度</td>
+</tr>
+<tr>
+<td>setMaxWidth(int);</td>
+<td>窗口最大宽度</td>
+</tr>
+<tr>
+<td>setResizable(boolean);</td>
+<td>是否允许改变大小</td>
+</tr>
+<tr>
+<td>setMinHeight(int);</td>
+<td>窗口最小高度</td>
+</tr>
+<tr>
+<td>setMinWidth(int);</td>
+<td>窗口最小宽度</td>
+</tr>
+<tr>
+<td>setMaximized(boolean);</td>
+<td>是否最大化</td>
+</tr>
+<tr>
+<td>setIconified(boolean);</td>
+<td>是否最小化</td>
+</tr>
+<tr>
+<td>setFullScreen(boolean);</td>
+<td>是否全屏</td>
+</tr>
+<tr>
+<td>setAlwaysOnTop(boolean);</td>
+<td>窗口是否保持置顶</td>
+</tr>
+<tr>
+<td>setY(int)</td>
+<td>窗口出生距离屏幕上面的高度</td>
+</tr>
+<tr>
+<td>setX(int)</td>
+<td>窗口出生举例屏幕左边的宽度</td>
+</tr>
+<tr>
+<td>primaryStage.setOpacity();</td>
+<td>透明度</td>
+</tr>
+<tr>
+<td>setTitle(String)</td>
+<td>设置窗口标题</td>
+</tr>
+<tr>
+<td>initStyle(StageStyle);</td>
+<td>设置窗口样式，只要知道三个常用的函数，StageStyle.DECORATED是正常，StageStyle.UTILITY没有最大最小化，StageStyle.TRANSPARENT是透明就行；</td>
+</tr>
+<tr>
+<td>setScene(Scene)</td>
+<td>给窗口设置场景</td>
+</tr>
+<tr>
+<td>close();</td>
+<td>关闭窗口</td>
+</tr>
+</tbody></table>
+<h3 id="Srage宽度高度监听和位置监听"><a href="#Srage宽度高度监听和位置监听" class="headerlink" title="Srage宽度高度监听和位置监听"></a>Srage宽度高度监听和位置监听</h3><p>可以用监听来做界面自适应之类的东西。</p>
+<h4 id="窗口大小监听"><a href="#窗口大小监听" class="headerlink" title="窗口大小监听"></a>窗口大小监听</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">Stage</span> <span class="variable">stage</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Stage</span>();</span><br><span class="line"></span><br><span class="line">        stage.heightProperty().addListener(<span class="keyword">new</span> <span class="title class_">ChangeListener</span>&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; arg0, Number arg1, Number arg2)</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;高度 = &quot;</span>+arg2.doubleValue());</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        stage.widthProperty().addListener(<span class="keyword">new</span> <span class="title class_">ChangeListener</span>&lt;Number&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; arg0, Number arg1, Number arg2)</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;宽度 = &quot;</span>+arg2.doubleValue());</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;);    </span><br><span class="line">        stage.show();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="窗口位置监听"><a href="#窗口位置监听" class="headerlink" title="窗口位置监听"></a>窗口位置监听</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">       </span><br><span class="line">       primaryStage.setY(<span class="number">100</span>);</span><br><span class="line">       primaryStage.setX(<span class="number">100</span>);</span><br><span class="line">       primaryStage.setWidth(<span class="number">200</span>);</span><br><span class="line">       primaryStage.setHeight(<span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">       primaryStage.xProperty().addListener(<span class="keyword">new</span> <span class="title class_">ChangeListener</span>&lt;Number&gt;() &#123;</span><br><span class="line"></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">&quot;举例屏幕左边有 = &quot;</span>+newValue.doubleValue()+<span class="string">&quot; px&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">       primaryStage.yProperty().addListener(<span class="keyword">new</span> <span class="title class_">ChangeListener</span>&lt;Number&gt;() &#123;</span><br><span class="line"></span><br><span class="line">           <span class="meta">@Override</span></span><br><span class="line">           <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">changed</span><span class="params">(ObservableValue&lt;? extends Number&gt; observable, Number oldValue, Number newValue)</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">&quot;举例屏幕上面有 = &quot;</span>+newValue.doubleValue()+<span class="string">&quot; px&quot;</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;);</span><br><span class="line">      </span><br><span class="line">       primaryStage.show();</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="窗口图标设置"><a href="#窗口图标设置" class="headerlink" title="窗口图标设置"></a>窗口图标设置</h3><p>在对应的包下放置文件，然后在getIcons的add方法里面填写相对路径。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javafx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.image.Image;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Window</span> <span class="keyword">extends</span> <span class="title class_">Application</span>&#123;</span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        primaryStage.getIcons().add(<span class="keyword">new</span> <span class="title class_">Image</span>(<span class="string">&quot;com/javafx/ico-01.png&quot;</span>));</span><br><span class="line"></span><br><span class="line">        stage.show();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="子窗口"><a href="#子窗口" class="headerlink" title="子窗口"></a>子窗口</h3><p>可以用initOwner()方法来设置一个窗口的父窗口，子窗口不关父窗口不会响应</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">// 模态化窗口。</span></span><br><span class="line"></span><br><span class="line">    <span class="type">Stage</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Stage</span>();</span><br><span class="line">    s1.setTitle(<span class="string">&quot;s1&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">Stage</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Stage</span>();</span><br><span class="line">    s2.setTitle(<span class="string">&quot;s2&quot;</span>);</span><br><span class="line">    <span class="comment">// s1有s2;</span></span><br><span class="line">    s2.initOwner(s1);</span><br><span class="line"></span><br><span class="line">    s1.show();</span><br><span class="line">    s2.show();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="Scene类"><a href="#Scene类" class="headerlink" title="Scene类"></a>Scene类</h2><p>在之前的练习中你可能发现了，窗口放大或缩小后，有些地方变成黑色，就是因为还没有添加一个Scene场景。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Group</span> <span class="variable">group</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Group</span>();</span><br><span class="line"><span class="type">Scene</span> <span class="variable">scene</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scene</span>(group); <span class="comment">//创建一个场景</span></span><br><span class="line">primaryStage.setScene(scene);<span class="comment">//给窗口设置场景</span></span><br></pre></td></tr></table></figure>
+
+<p>创建一个场景需要传入一个参数，这个参数可以是一个布局，也可以是一个控件。</p>
+<p>group是控件的集合，本身不是布局。</p>
+<h2 id="常用组件"><a href="#常用组件" class="headerlink" title="常用组件"></a>常用组件</h2><h3 id="添加组件的方法"><a href="#添加组件的方法" class="headerlink" title="添加组件的方法"></a>添加组件的方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">布局或集合组件.getChildren().add(组件对象<span class="number">1</span>); <span class="comment">//添加一个组件</span></span><br><span class="line">布局或集合组件.getChildren().addAll(组件对象<span class="number">1</span>, 组件对象<span class="number">2</span>); <span class="comment">//添加多个组件</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="常用组件添加"><a href="#常用组件添加" class="headerlink" title="常用组件添加"></a>常用组件添加</h3><p>常用信息输出组件</p>
+<table>
+<thead>
+<tr>
+<th>Label()</th>
+<th>标签</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Text()</td>
+<td>文本</td>
+</tr>
+<tr>
+<td>TextFlow()</td>
+<td>文本域，fx8版本后出现</td>
+</tr>
+<tr>
+<td>ImageView</td>
+<td>图片框</td>
+</tr>
+<tr>
+<td>ProgressBar</td>
+<td>进度条</td>
+</tr>
+</tbody></table>
+<p>常用控制组件</p>
+<table>
+<thead>
+<tr>
+<th>Button()</th>
+<th>按钮</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>常用信息输入组件</p>
+<table>
+<thead>
+<tr>
+<th>TextField()</th>
+<th>文本单行输入框</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TextField()</td>
+<td>文本多行输入域</td>
+</tr>
+<tr>
+<td>RadioButton()</td>
+<td>单选按钮</td>
+</tr>
+<tr>
+<td>checkBox()</td>
+<td>多选按钮</td>
+</tr>
+<tr>
+<td>PasswordField()</td>
+<td>密码框</td>
+</tr>
+<tr>
+<td>slider()</td>
+<td>滑条</td>
+</tr>
+</tbody></table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javafx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Group;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.CheckBox;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Label;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.PasswordField;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.ProgressBar;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.RadioButton;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.TextArea;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.TextField;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.image.Image;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.image.ImageView;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.FlowPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.text.Text;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.text.TextFlow;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Window</span> <span class="keyword">extends</span> <span class="title class_">Application</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">Button</span> <span class="variable">btn</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Button</span>(<span class="string">&quot;b1&quot;</span>);</span><br><span class="line">        Label lab=<span class="keyword">new</span> <span class="title class_">Label</span>(<span class="string">&quot;标签&quot;</span>);</span><br><span class="line">        Text t1=<span class="keyword">new</span> <span class="title class_">Text</span>(<span class="string">&quot;文本。。。&quot;</span>);</span><br><span class="line">        Text t2=<span class="keyword">new</span> <span class="title class_">Text</span>();</span><br><span class="line">        t2.setText(<span class="string">&quot;文本2。。。&quot;</span>);</span><br><span class="line"></span><br><span class="line">        TextFlow tf=<span class="keyword">new</span> <span class="title class_">TextFlow</span>();</span><br><span class="line">        tf.getChildren().addAll(t1,t2);</span><br><span class="line">        </span><br><span class="line">        ProgressBar pb=<span class="keyword">new</span> <span class="title class_">ProgressBar</span>();</span><br><span class="line">        pb.setProgress(<span class="number">0.25</span>);</span><br><span class="line">        ImageView iv=<span class="keyword">new</span> <span class="title class_">ImageView</span>();</span><br><span class="line">        iv.setImage(<span class="keyword">new</span> <span class="title class_">Image</span>(<span class="string">&quot;com/javafx/ico-01.png&quot;</span>, <span class="number">100</span>, <span class="number">100</span>, <span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>));</span><br><span class="line"></span><br><span class="line">        RadioButton rb1=<span class="keyword">new</span> <span class="title class_">RadioButton</span>();</span><br><span class="line">        RadioButton rb2=<span class="keyword">new</span> <span class="title class_">RadioButton</span>();</span><br><span class="line">        rb2.setLayoutX(<span class="number">20</span>);</span><br><span class="line">        CheckBox cb=<span class="keyword">new</span> <span class="title class_">CheckBox</span>();</span><br><span class="line">        cb.setLayoutX(<span class="number">40</span>);</span><br><span class="line">        Group group=<span class="keyword">new</span> <span class="title class_">Group</span>();</span><br><span class="line">        group.getChildren().addAll(rb1,rb2,cb);</span><br><span class="line"></span><br><span class="line">        TextField tfIn=<span class="keyword">new</span> <span class="title class_">TextField</span>();</span><br><span class="line">        TextArea ta=<span class="keyword">new</span> <span class="title class_">TextArea</span>();</span><br><span class="line">        PasswordField psf=<span class="keyword">new</span> <span class="title class_">PasswordField</span>();</span><br><span class="line"></span><br><span class="line">        FlowPane pane=<span class="keyword">new</span> <span class="title class_">FlowPane</span>();</span><br><span class="line">        pane.getChildren().addAll(btn,lab,tf,pb,iv,group,tfIn,ta,psf);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Scene scene=<span class="keyword">new</span> <span class="title class_">Scene</span>(pane);</span><br><span class="line">        </span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setY(<span class="number">100</span>);</span><br><span class="line">        primaryStage.setX(<span class="number">100</span>);</span><br><span class="line">        primaryStage.setWidth(<span class="number">1000</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">600</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>常用组件通用方法</p>
+<h2 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h2><p>布局我不去讲，请自行了解。这些布局之间可以互相嵌套，就像html里面的div一样。</p>
+<table>
+<thead>
+<tr>
+<th align="center">S.No</th>
+<th align="center">形状和描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_panes_hbox.html">HBox</a>HBox布局将应用程序中的所有节点排列在一个水平行中。</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_panes_vbox.html">VBox</a>VBox布局将我们应用程序中的所有节点排列在一个垂直列中。</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_borderpane.html">BorderPane</a>边框窗格布局将应用程序中的节点排列在顶部，左侧，右侧，底部和中心位置。</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_stackpane.html">StackPane</a>堆栈窗格布局将应用程序中的节点排列在另一个上面，就像在堆栈中一样。</td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_panes_textflow.html">TextFlow</a>文本流布局在单个流中排列多个文本节点。</td>
+</tr>
+<tr>
+<td align="center">6</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_anchorpane.html">AnchorPane</a>“锚点”窗格布局将应用程序中的节点锚定在距窗格特定距离处。</td>
+</tr>
+<tr>
+<td align="center">7</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_tilepane.html">TilePane</a>Tile窗格布局以均匀大小的tile的形式添加应用程序的所有节点。</td>
+</tr>
+<tr>
+<td align="center">8</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_gridpane.html">GridPane</a>网格窗格布局将应用程序中的节点排列为行和列的网格。</td>
+</tr>
+<tr>
+<td align="center">9</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://iowiki.com/javafx/layout_flowpane.html">FlowPane</a>流窗格布局包装流中的所有节点。</td>
+</tr>
+</tbody></table>
+<h2 id="监听"><a href="#监听" class="headerlink" title="监听"></a>监听</h2><p>在所有节点上，都可以添加监听，以下是所有节点都通用的监听事件。</p>
+<h3 id="单击"><a href="#单击" class="headerlink" title="单击"></a>单击</h3><p>方式1</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javafx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.event.ActionEvent;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.control.Button;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.FlowPane;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Window</span> <span class="keyword">extends</span> <span class="title class_">Application</span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="type">Button</span> <span class="variable">btn</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Button</span>(<span class="string">&quot;b1&quot;</span>);</span><br><span class="line">        btn.setOnAction(<span class="keyword">new</span> <span class="title class_">javafx</span>.event.EventHandler&lt;ActionEvent&gt;() &#123;</span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(ActionEvent event)</span> &#123;</span><br><span class="line">                <span class="type">Button</span> <span class="variable">bu</span> <span class="operator">=</span> (Button) event.getSource();</span><br><span class="line"></span><br><span class="line">                System.out.println(bu.getText() + <span class="string">&quot;单击&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;); </span><br><span class="line"></span><br><span class="line">        FlowPane pane=<span class="keyword">new</span> <span class="title class_">FlowPane</span>();</span><br><span class="line">        pane.getChildren().add(btn);</span><br><span class="line"></span><br><span class="line">        Scene scene=<span class="keyword">new</span> <span class="title class_">Scene</span>(pane);</span><br><span class="line">        </span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setWidth(<span class="number">500</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">500</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="双击"><a href="#双击" class="headerlink" title="双击"></a>双击</h3><p>这个方法也可以改成单击</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">package com.javafx;</span><br><span class="line"></span><br><span class="line">import javafx.application.Application;</span><br><span class="line">import javafx.event.EventHandler;</span><br><span class="line">import javafx.scene.Scene;</span><br><span class="line">import javafx.scene.control.Button;</span><br><span class="line">import javafx.scene.input.MouseButton;</span><br><span class="line">import javafx.scene.input.MouseEvent;</span><br><span class="line">import javafx.scene.layout.FlowPane;</span><br><span class="line">import javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line">public class Window extends Application&#123;</span><br><span class="line">    @Override</span><br><span class="line">    public void start(Stage primaryStage) throws Exception &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        Button btn = new Button(&quot;b1&quot;);</span><br><span class="line">        btn.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler&lt;MouseEvent&gt;() &#123;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void handle(MouseEvent arg0) &#123;</span><br><span class="line">                System.out.println(&quot;鼠标按键 = &quot; + arg0.getButton().name());</span><br><span class="line">                Button bu = (Button) arg0.getSource();</span><br><span class="line">                //连续点击只有两次且用的是鼠标左键</span><br><span class="line">                if(arg0.getClickCount() == 2 &amp;&amp;</span><br><span class="line">                arg0.getButton().name().equals(MouseButton.PRIMARY.name()))&#123;</span><br><span class="line">                    System.out.println(bu.getText()+&quot;双击&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            </span><br><span class="line">            </span><br><span class="line">        &#125;);</span><br><span class="line">        FlowPane pane=new FlowPane();</span><br><span class="line">        pane.getChildren().add(btn);</span><br><span class="line"></span><br><span class="line">        Scene scene=new Scene(pane);</span><br><span class="line">        </span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setWidth(200);</span><br><span class="line">        primaryStage.setHeight(200);</span><br><span class="line">        primaryStage.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="键盘"><a href="#键盘" class="headerlink" title="键盘"></a>键盘</h3><p>如果想监测到多个键同时按到，需要用另外一个方法，这个后面会讲</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.javafx;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javafx.application.Application;</span><br><span class="line"><span class="keyword">import</span> javafx.event.EventHandler;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.Scene;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.input.KeyCode;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.input.KeyEvent;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.layout.FlowPane;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.text.Font;</span><br><span class="line"><span class="keyword">import</span> javafx.scene.text.Text;</span><br><span class="line"><span class="keyword">import</span> javafx.stage.Stage;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Window</span> <span class="keyword">extends</span> <span class="title class_">Application</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> Text text;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">start</span><span class="params">(Stage primaryStage)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        text=<span class="keyword">new</span> <span class="title class_">Text</span>(<span class="string">&quot;你按下了 “ ” 键。&quot;</span>);</span><br><span class="line">        text.setFont(Font.font(<span class="number">25</span>));</span><br><span class="line">        </span><br><span class="line">        FlowPane pane=<span class="keyword">new</span> <span class="title class_">FlowPane</span>();</span><br><span class="line">        pane.getChildren().add(text);</span><br><span class="line"></span><br><span class="line">        Scene scene=<span class="keyword">new</span> <span class="title class_">Scene</span>(pane);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        scene.setOnKeyPressed(<span class="keyword">new</span> <span class="title class_">EventHandler</span>&lt;KeyEvent&gt;()&#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">handle</span><span class="params">(KeyEvent arg0)</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (arg0.getCode().getName().equals(KeyCode.A.getName())) &#123;</span><br><span class="line">                    System.out.println(<span class="string">&quot;A被按下&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                text.setText(<span class="string">&quot;你按下了“&quot;</span>+arg0.getCode().getName()+<span class="string">&quot;”键。&quot;</span>);             </span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;);</span><br><span class="line">        primaryStage.setScene(scene);</span><br><span class="line">        primaryStage.setWidth(<span class="number">300</span>);</span><br><span class="line">        primaryStage.setHeight(<span class="number">100</span>);</span><br><span class="line">        primaryStage.show();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/%E8%BF%99%E6%98%AF%E8%BF%87%E6%B8%A1%E7%94%A8%E5%8D%9A%E5%AE%A2/" rel="prev" title="这是过渡用博客">
+                  <i class="fa fa-chevron-left"></i> 这是过渡用博客
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/java%E5%9F%BA%E7%A1%80%EF%BC%8C%E4%BB%8E%E2%80%9C%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C%E2%80%9D%E5%88%B0%E7%AE%80%E5%8D%95%E6%B8%B8%E6%88%8F/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gushan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

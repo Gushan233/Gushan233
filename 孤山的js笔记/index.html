@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha256-xejo6yLi6vGtAjcMIsY8BHdKsLg7QynVlFMzdQgUuy8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"gushan233.xyz","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.12.3","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="孤山的js笔记如果说html是网页的身体，css是网页的衣服，那么，js就是网页的行为。有了js，网页就多了一些活力。 孤山使用环境：nodejs v16.14.2、浏览器内核Chromium 86.0.4240.198、vscode 1.66.2、Windows10 2004。 本笔记是站在对方已经有一定js编程基础，拿来复习用的。这是我知识整理的产物。 一、基础部分1、js的信息输出js的信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="孤山的博客">
+<meta property="og:url" content="https://gushan233.xyz/%E5%AD%A4%E5%B1%B1%E7%9A%84js%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="孤山的博客">
+<meta property="og:description" content="孤山的js笔记如果说html是网页的身体，css是网页的衣服，那么，js就是网页的行为。有了js，网页就多了一些活力。 孤山使用环境：nodejs v16.14.2、浏览器内核Chromium 86.0.4240.198、vscode 1.66.2、Windows10 2004。 本笔记是站在对方已经有一定js编程基础，拿来复习用的。这是我知识整理的产物。 一、基础部分1、js的信息输出js的信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-02T10:06:41.286Z">
+<meta property="article:modified_time" content="2022-05-06T10:10:09.445Z">
+<meta property="article:author" content="Gushan">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://gushan233.xyz/%E5%AD%A4%E5%B1%B1%E7%9A%84js%E7%AC%94%E8%AE%B0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://gushan233.xyz/%E5%AD%A4%E5%B1%B1%E7%9A%84js%E7%AC%94%E8%AE%B0/","path":"孤山的js笔记/","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title> | 孤山的博客</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">孤山的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%A4%E5%B1%B1%E7%9A%84js%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">孤山的js笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="nav-number">1.1.</span> <span class="nav-text">一、基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81js%E7%9A%84%E4%BF%A1%E6%81%AF%E8%BE%93%E5%87%BA"><span class="nav-number">1.1.1.</span> <span class="nav-text">1、js的信息输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">2、数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">数字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%83%E5%B0%94"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">布尔</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">1.1.2.4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.1.2.5.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Undefined-%E5%92%8C-Null"><span class="nav-number">1.1.2.6.</span> <span class="nav-text">Undefined 和 Null</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.2.7.</span> <span class="nav-text">声明变量类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E4%B8%89%E5%A4%A7%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.3.</span> <span class="nav-text">3、三大结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">顺序结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">判断结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.3.3.</span> <span class="nav-text">循环结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81%E5%AF%B9%E8%B1%A1%E5%92%8C%E7%BB%93%E6%9E%84"><span class="nav-number">1.1.4.</span> <span class="nav-text">4、对象和结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.4.1.</span> <span class="nav-text">对象概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.4.2.</span> <span class="nav-text">对象方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-number">1.1.5.</span> <span class="nav-text">5、函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.5.1.</span> <span class="nav-text">函数语法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="nav-number">1.1.5.2.</span> <span class="nav-text">函数参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="nav-number">1.1.5.3.</span> <span class="nav-text">函数返回值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81%E5%8F%98%E9%87%8F%E5%92%8C%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.6.</span> <span class="nav-text">6、变量和常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-number">1.1.6.1.</span> <span class="nav-text">变量作用域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%94%9F%E5%AD%98%E6%9C%9F"><span class="nav-number">1.1.6.2.</span> <span class="nav-text">变量生存期</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AA%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E5%A4%8D%E5%88%B6%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.6.3.</span> <span class="nav-text">未声明变量复制和全局变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E9%87%8F"><span class="nav-number">1.1.6.4.</span> <span class="nav-text">常量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#html%E4%B8%AD%E7%9A%84%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.6.5.</span> <span class="nav-text">html中的全局变量</span></a></li></ol></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Gushan</p>
+  <div class="site-description" itemprop="description">孤山的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://gushan233.xyz/%E5%AD%A4%E5%B1%B1%E7%9A%84js%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Gushan">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="孤山的博客">
+      <meta itemprop="description" content="孤山的博客">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content=" | 孤山的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-08-02 18:06:41" itemprop="dateCreated datePublished" datetime="2022-08-02T18:06:41+08:00">2022-08-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-05-06 18:10:09" itemprop="dateModified" datetime="2022-05-06T18:10:09+08:00">2022-05-06</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="孤山的js笔记"><a href="#孤山的js笔记" class="headerlink" title="孤山的js笔记"></a>孤山的js笔记</h1><p>如果说html是网页的身体，css是网页的衣服，那么，js就是网页的行为。有了js，网页就多了一些活力。</p>
+<p>孤山使用环境：nodejs v16.14.2、浏览器内核Chromium 86.0.4240.198、vscode 1.66.2、Windows10 2004。</p>
+<p>本笔记是站在对方已经有一定js编程基础，拿来复习用的。这是我知识整理的产物。</p>
+<h2 id="一、基础部分"><a href="#一、基础部分" class="headerlink" title="一、基础部分"></a>一、基础部分</h2><h3 id="1、js的信息输出"><a href="#1、js的信息输出" class="headerlink" title="1、js的信息输出"></a>1、js的信息输出</h3><p>js的信息输出有四种方式：控制台、警告框、写入html文档、写入html，本笔记如果没有用到html，一律在vscode内用nodeJs运行。</p>
+<p>控制台：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;信息&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>警告框</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">alent</span>(<span class="string">&quot;信息&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>写入html标签（id方式）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;标签ID名&quot;</span>).<span class="property">innerHTML</span> = <span class="string">&quot;信息&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>写入html文档</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="string">&quot;内容&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h3><p>js的类型分为基本类型和引用类型。</p>
+<p>基本类型有：字符串（String）、数字(Number)、布尔(Boolean)、对空（Null）、未定义（Undefined）、Symbol。</p>
+<p>引用类型有：对象(Object)、数组(Array)、函数(Function)，还有两个特殊的对象：正则（RegExp）和日期（Date）。</p>
+<p>因为js拥有动态类型，所以相同的一个变量可视作不同的类型.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x;               <span class="comment">// x 为 undefined</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">5</span>;           <span class="comment">// 现在 x 为数字</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="string">&quot;John&quot;</span>;      <span class="comment">// 现在 x 为字符串</span></span><br></pre></td></tr></table></figure>
+
+<p>变量的数据类型可通过typeOf操作符来查看</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">&quot;John&quot;</span>                <span class="comment">// 返回 string</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">3.14</span>                  <span class="comment">// 返回 number</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">false</span>                 <span class="comment">// 返回 boolean</span></span><br><span class="line"><span class="keyword">typeof</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]             <span class="comment">// 返回 object</span></span><br><span class="line"><span class="keyword">typeof</span> &#123;<span class="attr">name</span>:<span class="string">&#x27;John&#x27;</span>, <span class="attr">age</span>:<span class="number">34</span>&#125; <span class="comment">// 返回 object</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>字符串举例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“你今天吃饭了吗”</span><br><span class="line">‘<span class="number">2333</span>’</span><br><span class="line">“宅在家里真不错\n”</span><br></pre></td></tr></table></figure>
+
+<p>字符串内可以套引号，只要不是最外面的那层引号</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> answer=<span class="string">&quot;It&#x27;s alright&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> answer=<span class="string">&quot;He is called &#x27;Johnny&#x27;&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> answer=<span class="string">&#x27;He is called &quot;Johnny&quot;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数字"><a href="#数字" class="headerlink" title="数字"></a>数字</h4><p>数字举例：2333、20、3&#x2F;2、4.1</p>
+<p>js不同于java或其他强类型语言，数字不区分浮点数和整数，可以带小数点，也可以不带。</p>
+<p>极大或极小的数字可以用科学计数法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x1=<span class="number">114514.00</span>;      <span class="comment">//使用小数点来写</span></span><br><span class="line"><span class="keyword">var</span> x2=<span class="number">114514</span>;         <span class="comment">//不使用小数点来写</span></span><br><span class="line"><span class="keyword">var</span> y=<span class="number">123e5</span>;      <span class="comment">// 12300000</span></span><br><span class="line"><span class="keyword">var</span> z=<span class="number">123e-5</span>;     <span class="comment">// 0.00123</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="布尔"><a href="#布尔" class="headerlink" title="布尔"></a>布尔</h4><p>布尔（逻辑）只能有两个值：true 或 false。常常用于条件测试。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1=<span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> a2=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来是引用类型</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>数值有两种创建方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Gushans</span>=<span class="keyword">new</span> <span class="title class_">Array</span>();</span><br><span class="line"><span class="title class_">Gushans</span>[<span class="number">0</span>]=<span class="string">&quot;YuanChu&quot;</span>;</span><br><span class="line"><span class="title class_">Gushans</span>[<span class="number">1</span>]=<span class="string">&quot;HanQing&quot;</span>;</span><br><span class="line"><span class="title class_">Gushans</span>[<span class="number">2</span>]=<span class="string">&quot;ShuLiu&quot;</span>;</span><br><span class="line"><span class="comment">//第二种方式</span></span><br><span class="line"><span class="comment">//var Gushans=new Array(&quot;YuanChu&quot;,&quot;HanQing&quot;,&quot;ShuLiu&quot;);</span></span><br></pre></td></tr></table></figure>
+
+<p>数组下标是基于零的，所以第一个项目是 [0]，第二个是 [1]，以此类推。</p>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象由花括号分隔。在括号内部，对象的属性以名称和值对的形式 (name : value) 来定义。属性由逗号分隔：，就像java的Hashcode</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person=&#123;<span class="attr">firstname</span>:<span class="string">&quot;Gushan&quot;</span>, <span class="attr">age</span>:<span class="number">18</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>对象被直接输出时，会直接输出定义语句，但是用下面两种方式。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=person.<span class="property">lastname</span>;</span><br><span class="line">name=person[<span class="string">&quot;lastname&quot;</span>];</span><br></pre></td></tr></table></figure>
+
+<p>就可以获取到对象属性。</p>
+<h4 id="Undefined-和-Null"><a href="#Undefined-和-Null" class="headerlink" title="Undefined 和 Null"></a>Undefined 和 Null</h4><p>Undefined 这个值表示变量不含有值，当程序出现这个值时，说明出现了比较严重的问题，或者程序的设计不合理。</p>
+<p>可以通过将变量的值设置为 null 来清空变量。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cars=<span class="literal">null</span>;</span><br><span class="line">person=<span class="literal">null</span>;</span><br></pre></td></tr></table></figure>
+
+<h4 id="声明变量类型"><a href="#声明变量类型" class="headerlink" title="声明变量类型"></a>声明变量类型</h4><p>当声明新变量时。可以使用关键词“new”来声明其类型。</p>
+<h3 id="3、三大结构"><a href="#3、三大结构" class="headerlink" title="3、三大结构"></a>3、三大结构</h3><h4 id="顺序结构"><a href="#顺序结构" class="headerlink" title="顺序结构"></a>顺序结构</h4><h4 id="判断结构"><a href="#判断结构" class="headerlink" title="判断结构"></a>判断结构</h4><h4 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h4><h3 id="4、对象和结构"><a href="#4、对象和结构" class="headerlink" title="4、对象和结构"></a>4、对象和结构</h3><h4 id="对象概念"><a href="#对象概念" class="headerlink" title="对象概念"></a>对象概念</h4><p>真实生活中，有很多东西可以抽象成一个对象，比如一辆车，有品牌、重量、颜色、排放量等等。一个人有身高、体重、性别、爱好等属性。</p>
+<p>对象也是一个变量，但对象可以包含多个值，每个值以name:value来呈现（）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> car = &#123;<span class="attr">name</span>:<span class="string">&quot;Fiat&quot;</span>, <span class="attr">model</span>:<span class="number">500</span>, <span class="attr">color</span>:<span class="string">&quot;white&quot;</span>&#125;<span class="comment">//创建</span></span><br></pre></td></tr></table></figure>
+
+<p>可以说 “JavaScript 对象是变量的容器”。</p>
+<p>但是，我们通常认为 “JavaScript 对象是键值对的容器”。</p>
+<p>键值对通常写法为 <strong>name : value</strong> (键与值以冒号分割)。</p>
+<p>键值对在 JavaScript 对象通常称为 <strong>对象属性</strong>。</p>
+<h4 id="对象方法"><a href="#对象方法" class="headerlink" title="对象方法"></a>对象方法</h4><p>对象的方法定义了一个函数，并作为对象的属性存储。</p>
+<p>对象方法通过添加 () 调用 (作为一个函数)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = person.<span class="title function_">fullName</span>();</span><br></pre></td></tr></table></figure>
+
+<p>不加括号访问将会返回定义函数的字符串。</p>
+<p>创建对象方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">methodName : <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">// 代码 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a=objectName.<span class="title function_">methodName</span>()</span><br><span class="line"><span class="comment">//访问</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="5、函数"><a href="#5、函数" class="headerlink" title="5、函数"></a>5、函数</h3><h4 id="函数语法"><a href="#函数语法" class="headerlink" title="函数语法"></a>函数语法</h4><h4 id="函数参数"><a href="#函数参数" class="headerlink" title="函数参数"></a>函数参数</h4><p>函数参数只在函数内起作用，是局部变量。</p>
+<h4 id="函数返回值"><a href="#函数返回值" class="headerlink" title="函数返回值"></a>函数返回值</h4><h3 id="6、变量和常量"><a href="#6、变量和常量" class="headerlink" title="6、变量和常量"></a>6、变量和常量</h3><h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><p>变量在函数内声明，变量为局部变量，具有局部作用域。</p>
+<p>局部变量：只能在函数内部访问。</p>
+<p>变量在函数外定义，即为全局变量。</p>
+<p>全局变量有 <strong>全局作用域</strong>: 网页中所有脚本和函数均可使用。</p>
+<p>如果变量在函数内没有声明（没有使用 var 关键字），该变量为全局变量。</p>
+<p>以下实例中 carName 在函数内，但是为全局变量。</p>
+<h4 id="变量生存期"><a href="#变量生存期" class="headerlink" title="变量生存期"></a>变量生存期</h4><p>JavaScript 变量生命周期在它声明时初始化。</p>
+<p>局部变量在函数执行完毕后销毁。</p>
+<p>全局变量在页面关闭后销毁。</p>
+<h4 id="未声明变量复制和全局变量"><a href="#未声明变量复制和全局变量" class="headerlink" title="未声明变量复制和全局变量"></a>未声明变量复制和全局变量</h4><h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><h4 id="html中的全局变量"><a href="#html中的全局变量" class="headerlink" title="html中的全局变量"></a>html中的全局变量</h4><p>在 HTML 中, 全局变量是 window 对象: 所有数据变量都属于 window 对象。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/java%E5%9F%BA%E7%A1%80%EF%BC%8C%E4%BB%8E%E2%80%9C%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C%E2%80%9D%E5%88%B0%E7%AE%80%E5%8D%95%E6%B8%B8%E6%88%8F/" rel="prev" title="">
+                  <i class="fa fa-chevron-left"></i> 
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/%E5%AD%A4%E5%B1%B1%E7%9A%84%E8%BD%AF%E4%BB%B6%E7%8E%AF%E5%A2%83/" rel="next" title="">
+                   <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gushan</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
