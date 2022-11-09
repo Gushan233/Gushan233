@@ -61,33 +61,6 @@
   </entry>
   
   <entry>
-    <title>nodejs express中间件和路由的使用 未写完</title>
-    <link href="https://gushan233.xyz/nodejs-express%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%92%8C%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
-    <id>https://gushan233.xyz/nodejs-express%E4%B8%AD%E9%97%B4%E4%BB%B6%E5%92%8C%E8%B7%AF%E7%94%B1%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
-    <published>2022-08-13T13:53:50.000Z</published>
-    <updated>2022-08-15T02:31:23.802Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="什么是路由"><a href="#什么是路由" class="headerlink" title="什么是路由"></a>什么是路由</h2><p>说起路由，你第一个想到的可能是路由器，两者之间确实有些相似之处，都是跟“地址”、“路径”相关联的。</p><p>nodeJs里面的路由，也是一个函数，当前端传送来某些数据时，根据这些数据路径的不同，执行不同的操作，再返回给前端。</p><p>下面是一个数字+1的例子</p><p>前端index.html</p><p>后端express</p><h2 id="什么是中间件"><a href="#什么是中间件" class="headerlink" title="什么是中间件"></a>什么是中间件</h2><p>这里只说nodejs里面的中间件，</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;什么是路由&quot;&gt;&lt;a href=&quot;#什么是路由&quot; class=&quot;headerlink&quot; title=&quot;什么是路由&quot;&gt;&lt;/a&gt;什么是路由&lt;/h2&gt;&lt;p&gt;说起路由，你第一个想到的可能是路由器，两者之间确实有些相似之处，都是跟“地址”、“路径”相关联的。&lt;/p&gt;
-&lt;p&gt;n</summary>
-      
-    
-    
-    
-    <category term="-node.js-" scheme="https://gushan233.xyz/categories/node-js/"/>
-    
-    
-    <category term="node.js" scheme="https://gushan233.xyz/tags/node-js/"/>
-    
-    <category term="后端" scheme="https://gushan233.xyz/tags/%E5%90%8E%E7%AB%AF/"/>
-    
-  </entry>
-  
-  <entry>
     <title>unity常用英语 v0.1</title>
     <link href="https://gushan233.xyz/unity%E7%94%A8%E8%8B%B1%E8%AF%AD/"/>
     <id>https://gushan233.xyz/unity%E7%94%A8%E8%8B%B1%E8%AF%AD/</id>
@@ -214,19 +187,6 @@
     
     
     <category term="js" scheme="https://gushan233.xyz/tags/js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>这是过渡用博客</title>
-    <link href="https://gushan233.xyz/%E8%BF%99%E6%98%AF%E8%BF%87%E6%B8%A1%E7%94%A8%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://gushan233.xyz/%E8%BF%99%E6%98%AF%E8%BF%87%E6%B8%A1%E7%94%A8%E5%8D%9A%E5%AE%A2/</id>
-    <published>2022-08-02T09:37:13.000Z</published>
-    <updated>2022-08-02T10:04:56.098Z</updated>
-    
-    
-    
-    
     
   </entry>
   
